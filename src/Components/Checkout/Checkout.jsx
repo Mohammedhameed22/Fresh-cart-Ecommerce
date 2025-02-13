@@ -11,13 +11,14 @@ import toast from 'react-hot-toast'
 
 export default function Checkout() {
   const [apiError, setApiError] = useState(null)
+  const navigate=useNavigate()
   const [loading, setloading] = useState(false)
   let {cart} = useContext(CartContext)
  
   async function Checkout(shippingAddress){
     try{
       setloading(true)
-      let {data} =await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=http://localhost:5180`,{
+      let {data} =await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=https://fresh-cart-ecommerce-flax.vercel.app/allorders`,{
         shippingAddress
       },{
         headers:{
@@ -26,7 +27,12 @@ export default function Checkout() {
       })
     console.log(data);
     toast.success(data.status)
-    location.href=data.session.url
+    
+
+    
+      
+
+   
   
 
    
@@ -38,6 +44,7 @@ export default function Checkout() {
       setloading(false)
       
     }
+  
     
 
   }
