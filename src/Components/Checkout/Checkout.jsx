@@ -18,7 +18,7 @@ export default function Checkout() {
   async function Checkout(shippingAddress){
     try{
       setloading(true)
-      let {data} =await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=https://fresh-cart-ecommerce-flax.vercel.app/allorders`,{
+      let {data} =await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=https://fresh-cart-ecommerce-flax.vercel.app/`,{
         shippingAddress
       },{
         headers:{
@@ -27,6 +27,10 @@ export default function Checkout() {
       })
     console.log(data);
     toast.success(data.status)
+location.href=data.session.url;
+  
+   
+    
     
 
     
