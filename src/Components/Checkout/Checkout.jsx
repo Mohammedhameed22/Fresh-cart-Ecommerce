@@ -27,7 +27,7 @@ export default function Checkout() {
       })
     console.log(data);
     toast.success(data.status)
-location.href=data.session.url;
+
   
    
     
