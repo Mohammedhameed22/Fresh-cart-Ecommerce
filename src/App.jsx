@@ -42,7 +42,7 @@ let routers = createBrowserRouter([{
     {path:'categories' , element:<ProtectedRoute><Categories/></ProtectedRoute> },
   
     {path:'checkout' , element:<ProtectedRoute><Checkout/></ProtectedRoute>},
-    {path:'allorders' , element:<ProtectedRoute><Allorders/></ProtectedRoute>},
+    {path:'allorders' , element:<Allorders/>},
     {path:'productdetails/:id' , element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
     {path:'*' , element: <NotFound/>},
   ]
