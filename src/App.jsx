@@ -41,7 +41,7 @@ let routers = createBrowserRouter([{
     {path:'wishlist' , element:<Wishlist/> },
     {path:'categories' , element:<ProtectedRoute><Categories/></ProtectedRoute> },
   
-    {path:'checkout' , element:<ProtectedRoute><Checkout/></ProtectedRoute>},
+    {path:'checkout' , element:<Checkout/>},
     {path:'allorders' , element:<Allorders/>},
     {path:'productdetails/:id' , element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
     {path:'*' , element: <NotFound/>},
